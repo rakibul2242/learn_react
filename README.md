@@ -1,3 +1,10 @@
+
+React JS 19 Full Course in Hindi | Learn React from Scratch (2025) in One Video
+27:57 minute
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
