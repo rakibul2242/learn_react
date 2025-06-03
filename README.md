@@ -1,6 +1,6 @@
 
 React JS 19 Full Course in Hindi | Learn React from Scratch (2025) in One Video
-27:57 minute
+time -> 01:55:40 
 
 
 
