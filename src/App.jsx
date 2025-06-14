@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Counter from "./Counter";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
+      <Counter />
+      <div class="flex items-center justify-center">
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -28,8 +30,17 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
-}
+      <h1 className="font-bold text-green-600">Tailwind 4 is working!</h1>
 
-export default App
+      <NewComponant />
+    </>
+  );
+}
+function NewComponant() {
+  return (
+    <>
+      <h2>this is new componane</h2>
+    </>
+  );
+}
+export default App;
