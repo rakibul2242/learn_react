@@ -4,6 +4,7 @@ import PasswordGenerator from "./PasswordGenerator";
 import Map from "./Map";
 import Clock from "./Clock";
 import NestedLoop from "./NestedLoop";
+import FormSubmitStatus from "./UseFormStatus";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <PasswordGenerator /> */}
       {/* <Map /> */}
       {/* <Clock /> */}
-      <NestedLoop />
+      {/* <NestedLoop /> */}
+      <FormSubmitStatus/>
     </>
   );
 }

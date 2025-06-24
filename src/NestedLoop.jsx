@@ -110,7 +110,7 @@ function NestedLoop() {
       <div className="grid gap-6">
         {colleges.map((college, index) => (
           <div key={index} className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-xl font-semibold text-blue-700 mb-2">{college.name}</h2>
+            <p><strong>Name:</strong><span className="ms-1 text-lg font-semibold text-blue-700 mb-2">{college.name}</span></p>
             <p><strong>City:</strong> {college.city}</p>
             <p><strong>Website:</strong> <a href={college.website} target="_blank" className="text-blue-500 underline">{college.website}</a></p>
             <p><strong>Founded:</strong> {college.founded}</p>
