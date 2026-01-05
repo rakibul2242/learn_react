@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App.jsx";
 import { RouterProvider } from "react-router/dom";
 import { createBrowserRouter } from "react-router";
+import About from "./components/About/About.jsx";
+import Home from "./components/Home/Home.jsx";
+import Services from "./components/Services/Services.jsx";
+import Contact from "./components/Contact/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,11 +16,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <div>Home Page</div>,
+        element: <Home />,
       },
       {
         path: "about",
-        element: <div>About Page</div>,
+        element: <About />,
+      },
+      {
+        path: "services",
+        element: <Services />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },
