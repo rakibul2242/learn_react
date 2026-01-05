@@ -34,6 +34,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "",
+            loader: githubLoader,
+            element: <Github />,
+          },
+          {
+            path: "bg-changer",
             element: <BgChanger />,
           },
           {

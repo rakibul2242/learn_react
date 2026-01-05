@@ -35,6 +35,16 @@ function Projects() {
                 : "bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition"
             }
           >
+            GitHub
+          </NavLink>
+          <NavLink
+            to="bg-changer"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold shadow-lg"
+                : "bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition"
+            }
+          >
             Bg Changer
           </NavLink>
           <NavLink
