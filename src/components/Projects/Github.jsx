@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router";
 
 function Github() {
-  const [userData, setUserData] = useState(null);
+  //   const [userData, setUserData] = useState(null);
 
-  const getGitHubData = async () => {
-    try {
-      const response = await fetch("https://api.github.com/users/rakibul2242");
-      const data = await response.json();
-      setUserData(data);
-      console.log(data);
-    } catch (error) {
-      console.error("Error fetching GitHub data:", error);
-    }
-  };
+  //   const getGitHubData = async () => {
+  //     try {
+  //       const response = await fetch("https://api.github.com/users/rakibul2242");
+  //       const data = await response.json();
+  //       setUserData(data);
+  //       console.log(data);
+  //     } catch (error) {
+  //       console.error("Error fetching GitHub data:", error);
+  //     }
+  //   };
 
-  console.log("fetch data", userData);
+  //   console.log("fetch data", userData);
 
-  useEffect(() => {
-    getGitHubData();
-  }, []);
+  //   useEffect(() => {
+  //     getGitHubData();
+  //   }, []);
+
+  /**
+   * use loader function from react-router to fetch data
+   */
+  const userData = useLoaderData();
 
   return (
     <div className="flex flex-col items-center justify-center h-100 bg-gray-100 p-6">
@@ -58,7 +64,7 @@ function Github() {
         </div>
         {/* GitHub button */}
         <a
-          href="https://github.com/rakibul"
+          href={userData?.html_url ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
@@ -71,3 +77,8 @@ function Github() {
 }
 
 export default Github;
+
+export const githubLoader = async () => {
+  const response = await fetch("https://api.github.com/users/rakibul2242");
+  return response.json();
+};

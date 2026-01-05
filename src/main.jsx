@@ -17,7 +17,7 @@ import NestedLoop from "./components/Projects/NestedLoop.jsx";
 import PasswordGenerator from "./components/Projects/PasswordGenerator.jsx";
 import Toggle from "./components/Projects/Toggle.jsx";
 import FormSubmitStatus from "./components/Projects/UseFormStatus.jsx";
-import Github from "./components/Projects/Github.jsx";
+import Github, { githubLoader } from "./components/Projects/Github.jsx";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +84,7 @@ const router = createBrowserRouter([
       },
       {
         path: "github",
+        loader: githubLoader,
         element: <Github />,
       },
       {
