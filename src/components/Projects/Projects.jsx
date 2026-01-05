@@ -28,6 +28,7 @@ function Projects() {
         <div className="flex container mx-auto justify-center flex-wrap gap-4 my-4">
           <NavLink
             to=""
+            end
             className={({ isActive }) =>
               isActive
                 ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold shadow-lg"
