@@ -35,7 +35,7 @@ function PasswordGenerator() {
     window.navigator.clipboard.writeText(password);
   };
   return (
-    <div className="bg-gray-900 h-screen w-full p-10 flex justify-center">
+    <div className="bg-gray-900 h-100 w-full p-10 flex justify-center flex-col items-center gap-6">
       <div className="bg-gray-700 rounded-md p-4 h-fit w-2/5">
         <div className="">
           <div className="rounded-lg flex justify-between items-center">

@@ -9,7 +9,7 @@ function Clock() {
   }, []);
 
   return (
-    <div className="bg-black h-screen flex items-center justify-center p-6">
+    <div className="bg-black h-100 flex items-center justify-center p-6">
       <div className="text-center text-cyan-400 drop-shadow-lg">
         <div
           className="text-4xl font-mono font-extrabold tracking-widest bg-black border-4 border-cyan-400 rounded-lg px-10 py-6 select-none shadow-[0_0_30px_cyan] animate-pulse"

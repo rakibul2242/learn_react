@@ -2,7 +2,7 @@ import { useState } from "react";
 function Counter() {
   const [click, setClick] = useState(0);
   return (
-    <div className="bg-[cadetblue] p-12 h-screen">
+    <div className="bg-[cadetblue] h-100 p-12">
       <div className="w-4/5 m-auto text-center">
         <div className="">
           <h3 className="text-lg font-semibold">Count is : {click}</h3>

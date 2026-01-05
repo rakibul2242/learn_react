@@ -32,7 +32,6 @@ const router = createBrowserRouter([
         element: <Projects />,
         children: [
           {
-            // path: "bg-changer",
             path: "",
             element: <BgChanger />,
           },
@@ -61,8 +60,12 @@ const router = createBrowserRouter([
             element: <Toggle />,
           },
           {
-            path: "form-submit-status",
+            path: "form-submit",
             element: <FormSubmitStatus />,
+          },
+          {
+            path: "*",
+            element: <BgChanger />,
           },
         ],
       },
