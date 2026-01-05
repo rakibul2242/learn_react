@@ -17,12 +17,12 @@ function Header() {
           {/* Navigation */}
           <nav className="hidden md:flex space-x-8">
             <NavLink
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? "text-blue-200 font-semibold border-b-2 border-white pb-1"
                   : "hover:text-blue-200 transition-colors duration-300 font-medium"
               }
-              to="/"
             >
               Home
             </NavLink>
