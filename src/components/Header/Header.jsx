@@ -66,6 +66,16 @@ function Header() {
             >
               Contact
             </NavLink>
+            <NavLink
+              to="/github"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-blue-200 font-semibold border-b-2 border-white pb-1"
+                  : "hover:text-blue-200 transition-colors duration-300 font-medium"
+              }
+            >
+              Github
+            </NavLink>
           </nav>
 
           {/* CTA Button & Mobile Menu */}
@@ -96,18 +106,42 @@ function Header() {
         {/* Mobile Menu (hidden by default) */}
         <div className="md:hidden mt-4 pb-2 border-t border-white/20 pt-4">
           <div className="flex flex-col space-y-3">
-            <Link href="#" className="hover:text-blue-200 py-2">
+            <NavLink
+              to="/"
+              className="hover:text-blue-200 transition-colors duration-300 font-medium"
+            >
               Home
-            </Link>
-            <a href="#" className="hover:text-blue-200 py-2">
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className="hover:text-blue-200 transition-colors duration-300 font-medium"
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="hover:text-blue-200 transition-colors duration-300 font-medium"
+            >
               About
-            </a>
-            <a href="#" className="hover:text-blue-200 py-2">
+            </NavLink>
+            <NavLink
+              to="/services"
+              className="hover:text-blue-200 transition-colors duration-300 font-medium"
+            >
               Services
-            </a>
-            <a href="#" className="hover:text-blue-200 py-2">
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="hover:text-blue-200 transition-colors duration-300 font-medium"
+            >
               Contact
-            </a>
+            </NavLink>
+            <NavLink
+              to="/github"
+              className="hover:text-blue-200 transition-colors duration-300 font-medium"
+            >
+              Github
+            </NavLink>
             <button className="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold mt-2">
               Get Started
             </button>
