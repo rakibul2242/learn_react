@@ -27,6 +27,16 @@ function Header() {
               Home
             </NavLink>
             <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-blue-200 font-semibold border-b-2 border-white pb-1"
+                  : "hover:text-blue-200 transition-colors duration-300 font-medium"
+              }
+            >
+              Projects
+            </NavLink>
+            <NavLink
               to="/about"
               className={({ isActive }) =>
                 isActive
