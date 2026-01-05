@@ -9,6 +9,14 @@ import Home from "./components/Home/Home.jsx";
 import Services from "./components/Services/Services.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Projects from "./components/Projects/Projects.jsx";
+import BgChanger from "./components/Projects/BgChanger.jsx";
+import Clock from "./components/Projects/Clock.jsx";
+import Counter from "./components/Projects/Counter.jsx";
+import Map from "./components/Projects/Map.jsx";
+import NestedLoop from "./components/Projects/NestedLoop.jsx";
+import PasswordGenerator from "./components/Projects/PasswordGenerator.jsx";
+import Toggle from "./components/Projects/Toggle.jsx";
+import FormSubmitStatus from "./components/Projects/UseFormStatus.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +30,41 @@ const router = createBrowserRouter([
       {
         path: "projects",
         element: <Projects />,
+        children: [
+          {
+            // path: "bg-changer",
+            path: "",
+            element: <BgChanger />,
+          },
+          {
+            path: "clock",
+            element: <Clock />,
+          },
+          {
+            path: "counter",
+            element: <Counter />,
+          },
+          {
+            path: "mapper",
+            element: <Map />,
+          },
+          {
+            path: "nested-loop",
+            element: <NestedLoop />,
+          },
+          {
+            path: "password-generator",
+            element: <PasswordGenerator />,
+          },
+          {
+            path: "toggle",
+            element: <Toggle />,
+          },
+          {
+            path: "form-submit-status",
+            element: <FormSubmitStatus />,
+          },
+        ],
       },
       {
         path: "about",
