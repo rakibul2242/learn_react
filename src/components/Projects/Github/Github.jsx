@@ -28,6 +28,54 @@ function Github() {
 
   return (
     <div className="flex flex-col items-center justify-center h-100 bg-gray-100 p-6">
+      <form className="mb-6 w-full max-w-md">
+        <div className="flex gap-2 relative">
+          {/* focus-within wrapper */}
+          <div className="flex-1 relative group">
+            <input
+              type="text"
+              placeholder="Enter GitHub username"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg
+                   focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
+            {/* Dropdown */}
+            <div
+              className="absolute top-full left-0 right-0 mt-1 bg-white
+                   border border-gray-300 rounded-lg shadow-lg z-10
+                   max-h-60 overflow-y-auto
+                   hidden group-focus-within:block"
+            >
+              <div className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer transition">
+                <img
+                  src="https://avatars.githubusercontent.com/u/1?v=4"
+                  alt="octocat"
+                  className="w-8 h-8 rounded-full"
+                />
+                <span className="font-medium text-gray-800">octocat</span>
+              </div>
+
+              <div className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer transition">
+                <img
+                  src="https://avatars.githubusercontent.com/u/2?v=4"
+                  alt="user"
+                  className="w-8 h-8 rounded-full"
+                />
+                <span className="font-medium text-gray-800">github-user</span>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg
+                 hover:bg-blue-700 transition"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+
       <div className="bg-white p-6 rounded-xl shadow-lg flex items-center gap-4">
         {/* Avatar */}
         <img
