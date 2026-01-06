@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 
 function Github() {
@@ -24,23 +24,54 @@ function Github() {
   /**
    * use loader function from react-router to fetch data
    */
-  const userData = useLoaderData();
+  // const userData = useLoaderData();
+  const initialData = useLoaderData();
+  const [userData, setUserData] = useState(initialData);
+
+  /**
+   * Form submit handler, fetch user data from GitHub API
+   */
+  const fetchUserData = async (username) => {
+    const response = await fetch(`https://api.github.com/users/${username}`);
+    const data = await response.json();
+    setUserData(data);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const username = event.target[0].value;
+    const searchInput = event.target[0];
+
+    // return if search is empty
+    if (!username.trim()) {
+      searchInput.classList.add("focus:ring-red-500");
+      searchInput.focus();
+      return;
+    } else {
+      searchInput.classList.remove("focus:ring-red-500");
+    }
+
+    console.log("Submitted username:", username);
+
+    fetchUserData(username);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center h-100 bg-gray-100 p-6">
-      <form className="mb-6 w-full max-w-md">
+      <form onSubmit={handleSubmit} className="mb-6 w-full max-w-md">
         <div className="flex gap-2 relative">
           {/* focus-within wrapper */}
           <div className="flex-1 relative group">
             <input
               type="text"
               placeholder="Enter GitHub username"
+              required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg
                    focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Dropdown */}
-            <div
+            {/* <div
               className="absolute top-full left-0 right-0 mt-1 bg-white
                    border border-gray-300 rounded-lg shadow-lg z-10
                    max-h-60 overflow-y-auto
@@ -63,12 +94,12 @@ function Github() {
                 />
                 <span className="font-medium text-gray-800">github-user</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg
+            className="px-6 py-2 cursor-pointer bg-blue-600 text-white rounded-lg
                  hover:bg-blue-700 transition"
           >
             Search
