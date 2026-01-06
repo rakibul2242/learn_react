@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 
 function Github() {
+  const initialData = useLoaderData();
+  const [userData, setUserData] = useState(initialData);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   //   const [userData, setUserData] = useState(null);
 
   //   const getGitHubData = async () => {
@@ -25,16 +30,28 @@ function Github() {
    * use loader function from react-router to fetch data
    */
   // const userData = useLoaderData();
-  const initialData = useLoaderData();
-  const [userData, setUserData] = useState(initialData);
 
   /**
    * Form submit handler, fetch user data from GitHub API
    */
   const fetchUserData = async (username) => {
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const data = await response.json();
-    setUserData(data);
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      if (!response.ok) throw new Error("User not found");
+
+      const data = await response.json();
+      setUserData(data);
+    } catch (error) {
+      console.error(error);
+      setError(error.message);
+      setLoading(false);
+      return;
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -99,10 +116,11 @@ function Github() {
 
           <button
             type="submit"
+            disabled={loading}
             className="px-6 py-2 cursor-pointer bg-blue-600 text-white rounded-lg
-                 hover:bg-blue-700 transition"
+                 hover:bg-blue-700 transition disabled:bg-gray-400"
           >
-            Search
+            {loading ? "Loading..." : "Search"}
           </button>
         </div>
       </form>
